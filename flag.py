@@ -2,19 +2,17 @@ import random
 import deff
 x = int(input("Сколько оценок? "))
 arr=[]
-flag=False
-a=0
+flag=True
 for i in range(x):
     arr.append(random.randint(2,5))
     if arr[i]==2:
-        flag=True
+        flag=False
 deff.print_arr(arr)
-if flag:
+if flag==False:
     print("Ученик двоечник")
 else:
     for i in range(x):
-        a+=arr[i]
-        if a==5*x:
-            flag=True
+        if arr[i]!=5:
+            flag=False
     if flag:
         print("Ученик отличник")
