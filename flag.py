@@ -10,9 +10,8 @@ for i in range(x):
 deff.print_arr(arr)
 if flag==False:
     print("Ученик двоечник")
-else:
-    for i in range(x):
-        if arr[i]!=5:
-            flag=False
-    if flag:
-        print("Ученик отличник")
+for i in range(x):
+    if arr[i]!=5:
+        flag=False
+if flag:
+    print("Ученик отличник")
