@@ -3,22 +3,30 @@ a=[]
 adop=[]
 X=int(input('Сколько эелементов должно быть в массиве? '))
 x1=int(input('Сколько элементов должно быть во внутренних массивах? '))
-str0=''
+s=0
+mx=100
+mn=9
 for i in range(X):
     adop=[]
     for q in range(x1):
-        n=random.randint(-100,100)
+        n=random.randint(10,99)
+        s+=n
         adop.append(n)
-    a.append(adop)
-for i in range(x1):
-    for q in range(X):
-        if a[q][i]>=0:
-            print(end=' ')
-        print(a[q][i],end='\t')
-    print()
-n=int(input('Какое число вам нужно? '))
-for i in range(X):
     for q in range(x1):
-        if a[i][q]==n:
-            str0+=f'{i}-го '
-print(f'Заданное число находится внутри {str0}внутреннего(их) массива(ов)')
+        if adop[q]>mn:
+            mn=adop[q]
+        if adop[q]<mx:
+            mx=adop[q]
+    adop.append(s)
+    adop.append(mn)
+    adop.append(mx)
+    a.append(adop)
+    s=0
+    mn=9
+    mx=99
+for i in range(X):
+    for q in range(x1+3):
+        print(a[i][q],end='\t')
+        if q==x1-1:
+            print('|',end='\t')
+    print()

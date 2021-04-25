@@ -1,0 +1,20 @@
+n=int(input("Сколько чисел записать? "))
+f=open("whileone.py","w")
+for i in range(1,n+1):
+    f.write(str(i)+"\n")
+f.close()
+f=open("whileone.py","r")
+a=f.read()
+f.close()
+print(a)
+n=int(input("Сколько чисел записать? "))
+f=open("whileone.py","w")
+for i in range(1,n+1):
+    f.write(str(i)+" ")
+f.close()
+f=open("whileone.py","r")
+a=f.read().split(" ")
+f.close()
+for i in range(n-1):
+    print(a[i],end=", ")
+print(a[n-1],end=".\n")
